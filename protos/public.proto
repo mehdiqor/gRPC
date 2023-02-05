@@ -1,0 +1,7 @@
+syntax = "proto3";
+package PublicPackage;
+
+message Result {
+    string status = 1;
+}
+message Empty {}
