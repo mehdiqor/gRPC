@@ -7,9 +7,9 @@ const ProductSchema = new mongoose.Schema({
 });
 ProductSchema.pre("save", function(next){
     const self = this;
-    self.constructor.coint(async function(err, data){
+    self.constructor.count(async function(err, data){
         if(err) return next(err)
-        model.set({id : (data + 1)})
+        self.set({id : (data + 1)})
         next();
     })
 });

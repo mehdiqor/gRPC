@@ -12,10 +12,10 @@ const productServiceURL = "localhost:4001";
 function main(){
     const server = new grpc.Server();
     server.addService(ProductPackage.ProductService.service, {
-        listProduct,
-        getProduct,
         createProduct,
         updateProduct,
+        listProduct,
+        getProduct,
         deleteProduct
     })
     server.bindAsync(productServiceURL, grpc.ServerCredentials.createInsecure(), (err, port) => {
