@@ -15,15 +15,33 @@ function createProduct(req, res, next){
         return res.json(data);
     })
 }
-function updateProduct(req, res, next){}
+function updateProduct(req, res, next){
+    const data = req.query;
+    productClient.updateProduct(data, (err, data) => {
+        if(err) return res.json(err);
+        return res.json(data);
+    })
+}
 function listProduct(req, res, next){
     productClient.listProduct(null, (err, data) => {
         if(err) return res.json(err);
         return res.json(data);
     })
 }
-function getProduct(req, res, next){}
-function deleteProduct(req, res, next){}
+function getProduct(req, res, next){
+    const {id} = req.params;
+    productClient.getProduct({id}, (err, data) => {
+        if(err) return res.json(err);
+        return res.json(data);
+    })
+}
+function deleteProduct(req, res, next){
+    const {id} = req.params;
+    productClient.deleteProduct({id}, (err, data) => {
+        if(err) return res.json(err);
+        return res.json(data);
+    })
+}
 
 module.exports = {
     createProduct,
