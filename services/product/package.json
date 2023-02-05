@@ -1,5 +1,5 @@
 {
-  "name": "grpc",
+  "name": "product",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@grpc/grpc-js": "^1.8.7",
     "@grpc/proto-loader": "^0.7.4",
-    "grpc": "^1.24.11"
+    "mongoose": "^6.9.0"
   }
 }
